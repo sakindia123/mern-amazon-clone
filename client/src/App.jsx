@@ -5,7 +5,7 @@ import Register from './pages/Register'
 import Home from './pages/Home';
 
 const Container = styled.div`
-width:100vw;
+width:100%;
 `
 
 function App() {

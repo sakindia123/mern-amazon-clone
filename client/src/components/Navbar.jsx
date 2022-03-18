@@ -20,11 +20,11 @@ const Navbar = () => {
                         <span>Guest</span>
                     </NavBtn>
                     <NavBtn>
-                        <span>Returns,</span>
-                        <span>Orders</span>
+                        <span>Returns</span>
+                        <span>& Orders</span>
                     </NavBtn>
                     <CartIcon>
-                        <AiOutlineShoppingCart size={35} />
+                        <AiOutlineShoppingCart size={30} />
                         <p>0</p>
                     </CartIcon>
                 </RightSection>
@@ -80,7 +80,6 @@ margin: 0px 15px;
 display: flex;
 align-items: center;
 
-
 input{
     flex:1;
     height:100%;
@@ -110,6 +109,7 @@ display:flex;
 align-items:center;
 padding:10px;
 width:90%;
+flex: 1;
 
 input{
     height:100%;
@@ -193,7 +193,7 @@ padding:5px;
 
 span{
     &:nth-child(1){
-        font-size:14px;
+        font-size:12px;
     }
 
     &:nth-child(2){
