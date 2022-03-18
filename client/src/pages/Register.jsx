@@ -85,6 +85,10 @@ input{
     outline:none;
     border: 1px solid lightgrey;
 
+    &::placeholder {
+        padding-left: 10px;
+      }
+      
     &:hover {
         border: 1px solid #ff9900;
       }
@@ -111,8 +115,8 @@ a{
 `
 const RegisterBtn = styled.button`
 margin-top:20px;
-width:50%;
-height:30px;
+width:75%;
+height:35px;
 
 &:hover {
     border: 1px solid grey;

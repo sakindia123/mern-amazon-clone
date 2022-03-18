@@ -78,6 +78,10 @@ input{
     outline:none;
     border: 1px solid lightgrey;
 
+    &::placeholder {
+        padding-left: 10px;
+      }
+      
     &:hover {
         border: 1px solid #ff9900;
       }
