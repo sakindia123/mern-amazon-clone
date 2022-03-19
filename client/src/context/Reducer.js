@@ -1,9 +1,11 @@
 export const initialState = {
     cart: [],
-    user: null
+    user: null,
+    address: {}
 }
 
 export const reducer = (state, action) => {
+    console.log(action)
     switch (action.type) {
         case "ADD_TO_CART":
             return {
@@ -24,6 +26,12 @@ export const reducer = (state, action) => {
             return {
                 ...state,
                 cart: updatedCart
+            }
+
+        case "ADD_ADDRESS":
+            return {
+                ...state,
+                address: [action.payload]
             }
 
         case 'GET_USER':

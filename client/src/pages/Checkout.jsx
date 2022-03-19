@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 import Navbar from '../components/Navbar'
 import { getTotal } from '../context/Reducer'
+import { useNavigate } from 'react-router-dom'
 import { useStateValue } from '../context/StateProvider'
 
 const Checkout = () => {
+    const nav = useNavigate();
     const [{ cart }, dispatch] = useStateValue();
 
     const deleteFromCartHandler = (e, id) => {
@@ -40,7 +42,7 @@ const Checkout = () => {
 
                 <Total>
                     <p>Subtotal:({cart.length} items):<b>₹{getTotal(cart)}</b></p>
-                    <button>Proceed to Checkout</button>
+                    <button onClick={() => nav('/address')}>Proceed to Checkout</button>
                 </Total>
             </InnerContainer>
         </Container>
@@ -50,7 +52,6 @@ const Checkout = () => {
 const Container = styled.div`
 width:100%;
 position:relative;
-border:1px solid red;
 `
 
 const InnerContainer = styled.div`
