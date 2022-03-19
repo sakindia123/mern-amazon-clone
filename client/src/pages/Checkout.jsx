@@ -23,7 +23,7 @@ const Checkout = () => {
                 <Cart>
                     <h3>Shopping Cart</h3>
                     {
-                        cart.map((cartItem) => {
+                        cart.map((cartItem) => (
                             <CartItem>
                                 <Image>
                                     <img src={cartItem.image} alt='pic' />
@@ -34,7 +34,7 @@ const Checkout = () => {
                                     <button onClick={deleteFromCartHandler}>Delete</button>
                                 </Info>
                             </CartItem>
-                        })
+                        ))
                     }
                 </Cart>
 
