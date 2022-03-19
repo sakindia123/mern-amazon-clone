@@ -1,7 +1,19 @@
 import styled from 'styled-components'
 import { FaStar } from "react-icons/fa";
+import { useStateValue } from '../context/StateProvider'
 
-const Card = () => {
+const Card = ({ id, title, price, image, rating }) => {
+    const [{ cart }, dispatch] = useStateValue();
+
+    const addToCart = (e) => {
+        e.preventDefault()
+
+        dispatch({
+            type: 'ADD_TO_CART',
+            payload: { id, title, price, image, rating }
+        })
+    }
+
     return (
         <Container>
             <Image>
@@ -9,10 +21,10 @@ const Card = () => {
                     alt='pic' />
             </Image>
             <Info>
-                <h4>Samsung Galaxy S20 FE 5G (Cloud Navy, 8GB RAM, 128GB Storage)</h4>
-                <FaStar size={25} />
-                <p>₹39,990.00</p>
-                <button>Add To Cart</button>
+                <h4>{title}</h4>
+                <FaStar color='#ff9900' size={25} />
+                <p>₹{price}</p>
+                <button onClick={addToCart}>Add To Cart</button>
             </Info>
         </Container>
     )

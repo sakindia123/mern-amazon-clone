@@ -11,14 +11,11 @@ const Home = () => {
         <img src='images/mobile-hero.jpg' alt='hero' />
       </Hero>
       <Grid>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card price={2500} title={'Samsung Galaxy S20 FE 5G (Cloud Navy, 8GB RAM, 128GB Storage'} />
+        <Card price={2500} title={'Samsung Galaxy S20 FE 5G (Cloud Navy, 8GB RAM, 128GB Storage'} />
+        <Card price={2500} title={'Samsung Galaxy S20 FE 5G (Cloud Navy, 8GB RAM, 128GB Storage'} />
+        <Card price={2500} title={'Samsung Galaxy S20 FE 5G (Cloud Navy, 8GB RAM, 128GB Storage'} />
+        <Card price={2500} title={'Samsung Galaxy S20 FE 5G (Cloud Navy, 8GB RAM, 128GB Storage'} />
       </Grid>
     </Container>
   )

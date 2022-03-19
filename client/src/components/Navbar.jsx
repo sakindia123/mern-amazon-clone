@@ -1,12 +1,18 @@
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom'
+import { useStateValue } from '../context/StateProvider'
 import { AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai'
 
 const Navbar = () => {
+    const [{ cart }, dispatch] = useStateValue()
+    const nav = useNavigate();
+
     return (
         <Container>
             <NavContainer>
                 <Logo>
-                    <img src='images/logo_home.png' alt='logo' />
+                    <img src='images/logo_home.png' alt='logo'
+                        onClick={() => nav('/')} />
                 </Logo>
                 <SearchBox>
                     <input type='text' placeholder='Search...'></input>
@@ -23,9 +29,9 @@ const Navbar = () => {
                         <span>Returns</span>
                         <span>& Orders</span>
                     </NavBtn>
-                    <CartIcon>
+                    <CartIcon onClick={() => nav('/checkout')}>
                         <AiOutlineShoppingCart size={30} />
-                        <p>0</p>
+                        <p>{cart.length}</p>
                     </CartIcon>
                 </RightSection>
             </NavContainer>
@@ -165,6 +171,7 @@ color:white;
 margin-left:10px;
 display:flex;
 align-items:center;
+cursor:pointer;
 
 p{
     margin-left:10px;
